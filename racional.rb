@@ -56,5 +56,11 @@ class Fraccion
 		end
 	return res
 	end
-	
+	#implementacion de la multiplicacion
+	def producto (other)
+		prod=Fraccion.new(0,0)
+		prod.x= @x * other.x
+		prod.y= @y * other.y
+	return prod			
+	end		
 end
