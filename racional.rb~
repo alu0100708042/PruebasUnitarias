@@ -14,8 +14,13 @@ class Fraccion
         end
 	def suma (other)
 		sum=Fraccion.new(0,0)
-		sum.x=@x + other.x
-		sum.y=@y + other.y
+		if @y == other.y
+			sum.x= @x +other.x		
+			sum.y= @y	
+		end		
+		sum.y=gdc(@y, other.y)		
+		sum.x=
+		
 	return sum	
 	end
 end
