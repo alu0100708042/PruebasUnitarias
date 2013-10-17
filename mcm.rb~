@@ -1,7 +1,7 @@
 def mcm(u,v)
 	u, v = u.abs, v.abs
 	(u / mcd(u,v)) * v
-
+puts mcm(6,4)
 end
 
 
