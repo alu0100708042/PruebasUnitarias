@@ -2,6 +2,7 @@
 
 require "./gcd.rb"
 class Fraccion
+	attr_reader :x :y
 	#incializacion del objeto, llamada al método del constructor
 	def initialize (a,b)
 		@x=a

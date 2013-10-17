@@ -1,7 +1,7 @@
 # Implementar en este fichero la clase para crear objetos racionales
 
 require "./gcd.rb"
-
+class Fraccion
 	#incializacion del objeto, llamada al método del constructor
 	def initialize (a,b)
 		@x=a
@@ -11,5 +11,5 @@ require "./gcd.rb"
         def to_s
                 "#{@x}/#{@y}"
         end
-class Fraccion
+
 end
