@@ -63,4 +63,16 @@ class Fraccion
 		prod.y= @y * other.y
 	return prod			
 	end		
+	#implementacion de la division
+	def division (other) # para hacer la division le damos la vuelta a la fraccion que se nos pasa por parametro y la multiplicamos
+		div = Fraccion.new(0,0)
+		#¡SE HACE EL CAMBIO!		
+		auxiliar = other.x
+		other.x=other.y
+		other.y=auxiliar
+		# SE MULTIPLICA	
+		div.x= @x * other.x
+		div.y= @y * other.y	
+	return div	
+	end
 end
