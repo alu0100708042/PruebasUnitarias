@@ -6,4 +6,4 @@ while v != 0
   u
 end
 
-
+puts gcd(6,4)
