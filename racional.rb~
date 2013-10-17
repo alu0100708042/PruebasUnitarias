@@ -21,7 +21,7 @@ class Fraccion
 	def y=(valor)
 		@y=valor	
 	end
-	def mcm(u,v)
+	def mcm(u,v) # hallamos el minimo comun multiplo multiplicando los dos numeros y dividiendolos por su maximo comun divisor
 	   u, v = u.abs, v.abs
  	   j =gcd(u,v)
 	   u*v/j
@@ -40,6 +40,21 @@ class Fraccion
 			sum.x=((@x *sum.y)/@y)+((other.x * sum.y)/other.y)  
 		end
 	return sum	
+	end
+	
+	#definicion de la resta
+	def resta (other)
+		res=Fraccion.new(0,0)
+		if @y == other.y    # igual denominador
+			res.x= @x - other.x		
+			res.y= @y	
+		else		    # distinto denominador
+			
+			res.y=mcm(@y, other.y)
+			puts "#{mcm(@y,other.y)}"		
+			res.x=((@x *res.y)/@y)-((other.x * res.y)/other.y)  
+		end
+	return res
 	end
 	
 end

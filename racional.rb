@@ -42,4 +42,19 @@ class Fraccion
 	return sum	
 	end
 	
+	#definicion de la resta
+	def resta (other)
+		res=Fraccion.new(0,0)
+		if @y == other.y    # igual denominador
+			res.x= @x - other.x		
+			res.y= @y	
+		else		    # distinto denominador
+			
+			res.y=mcm(@y, other.y)
+			puts "entro aqui"		
+			res.x=((@x *res.y)/@y)-((other.x * res.y)/other.y)  
+		end
+	return res
+	end
+	
 end
