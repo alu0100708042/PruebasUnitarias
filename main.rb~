@@ -1,0 +1,8 @@
+require "./racional.rb"
+
+a=Fraccion.new(1 ,  2)
+b=Fraccion.new(2 ,  4)
+
+c =a.suma(b)
+
+puts "#{c.to_s}"

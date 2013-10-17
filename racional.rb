@@ -1,7 +1,7 @@
 # Implementar en este fichero la clase para crear objetos racionales
 
 require "./gcd.rb"
-require "./mcm.rb"
+
 class Fraccion
 	attr_reader :x, :y
 	#incializacion del objeto, llamada al método del constructor
@@ -15,22 +15,31 @@ class Fraccion
         end
 	#definicion de sets
 	
-	def x(valor)
+	def x=(valor)
 		@x=valor	
 	end
-	def y(valor)
+	def y=(valor)
 		@y=valor	
 	end
-	#definicion de suma
+	def mcm(u,v) # hallamos el minimo comun multiplo multiplicando los dos numeros y dividiendolos por su maximo comun divisor
+	   u, v = u.abs, v.abs
+ 	   j =gcd(u,v)
+	   u*v/j
+	
+	end
+
+	#definicion de suma	
 	def suma (other)
 		sum=Fraccion.new(0,0)
 		if @y == other.y    # igual denominador
 			sum.x= @x +other.x		
 			sum.y= @y	
 		else		    # distinto denominador
-			sum.y(mcm(@y, other.y))		
-			sum.x(((@x *sum.y)/@y)+((other.x * sum.y)/other.y))  
+			
+			sum.y=mcm(@y, other.y)		
+			sum.x=((@x *sum.y)/@y)+((other.x * sum.y)/other.y)  
 		end
 	return sum	
 	end
+	
 end
