@@ -10,6 +10,7 @@ class Test_Fraccion < Test::Unit::TestCase
 	@b = Fraccion.new(2,3)
 	@c = Fraccion.new(3,5)
 	@d = Fraccion.new(1,5)
+   end
    def test_suma
       assert_equal([5, 3],@a.suma(@b))
       assert_equal([6, 5],@a.suma(@d)) 
