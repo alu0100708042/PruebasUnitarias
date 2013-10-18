@@ -6,6 +6,7 @@ class Fraccion
 	attr_reader :x, :y
 	#incializacion del objeto, llamada al método del constructor
 	def initialize (a,b)
+		raise ExceptionType, "El valor del denominador no puede ser 0" if (b==0)
 		@x=a
 		@y=b	
 	end
@@ -50,8 +51,7 @@ class Fraccion
 			res.y= @y	
 		else		    # distinto denominador
 			
-			res.y=mcm(@y, other.y)
-			puts "entro aqui"		
+			res.y=mcm(@y, other.y)		
 			res.x=((@x *res.y)/@y)-((other.x * res.y)/other.y)  
 		end
 	return res
@@ -75,3 +75,4 @@ class Fraccion
 		div.y= @y * other.y	
 	return div	
 	end
+end

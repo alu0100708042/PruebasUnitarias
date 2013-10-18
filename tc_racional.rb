@@ -4,8 +4,14 @@ require "./racional.rb"
 require "test/unit"
 
 class Test_Fraccion < Test::Unit::TestCase
+   
+   def setup
+		@a = Fraccion.new(1,1)
+		@b = Fraccion.new(2,3)
+		@c = Fraccion.new(3,5)
+		@d = Fraccion.new(1,5)
    def test_suma
-      assert_equal([2, 1], Fraccion.new(1,1).suma(1,1)) # (1/1) + (1/1) = (2/1)
-      assert_equal([17, 10], Fraccion.new(3,2).suma(1,5)) # (3/2) + (1/5) = (17/10)
+      assert_equal([5, 3], @a.suma(@b))
+      assert_equal([6, 5],@a.suma(@d)) 
    end
 end
